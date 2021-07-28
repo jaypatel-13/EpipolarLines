@@ -453,13 +453,62 @@ namespace Project2
                 dots.FillRectangle(Brushes.LightGreen, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
                 dots.DrawRectangle(Pens.Red, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
 
-                if (epipolar)
+                /*if (epipolar)
                 {
-                    /*
+                    *//*
                         00 01 02    0
                         10 11 12    1
                         20 21 22    2
 
+                   *//*
+                    X[0] = P[i / 2, 0];
+                    X[1] = P[i / 2, 1];
+                    X[2] = 1;
+
+                    double[] Eq = new double[3];
+
+                    Eq[0] = ((F[0, 0] * X[0]) + (F[0, 1] * X[1]) + (F[0, 2] * X[2]));
+                    Eq[1] = ((F[1, 0] * X[0]) + (F[1, 1] * X[1]) + (F[1, 2] * X[2]));
+                    Eq[2] = ((F[2, 0] * X[0]) + (F[2, 1] * X[1]) + (F[2, 2] * X[2]));
+
+                    int x1 = 0;
+                    int x2 = 430;
+
+                    double y1, y2;
+
+                    y1 = (((-1) * Eq[2]) - (Eq[0] * x1)) / Eq[1];
+                    y2 = (((-1) * Eq[2]) - (Eq[0] * x2)) / Eq[1];
+
+
+                    Graphics lines = pictureBox2.CreateGraphics();
+                    lines.DrawLine(Pens.LightGreen, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
+                }*/
+
+                i = i+1;
+            }
+
+            if (epipolar)
+            {
+                MouseEventArgs me = (MouseEventArgs)e;
+                Point coordinates = me.Location;
+
+                if (epipolar == false)
+                    listBox1.Items.Insert(i, "  " + (i / 2 + 1) + " => " + coordinates.ToString() + ",");
+
+                P[i / 2, 0] = coordinates.X;
+                P[i / 2, 1] = coordinates.Y;
+
+                Graphics dots = pictureBox1.CreateGraphics();
+                dots.FillRectangle(Brushes.LightGreen, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
+                dots.DrawRectangle(Pens.Red, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
+
+                
+                
+                    /*
+                        00 01 02    0
+                        10 11 12    1
+                        20 21 22    2
+                    F * P
                    */
                     X[0] = P[i / 2, 0];
                     X[1] = P[i / 2, 1];
@@ -481,10 +530,10 @@ namespace Project2
 
 
                     Graphics lines = pictureBox2.CreateGraphics();
-                    lines.DrawLine(Pens.Blue, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
-                }
+                    lines.DrawLine(Pens.LightGreen, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
+                
 
-                i = i+1;
+                i = i + 1;
             }
         }
 
@@ -505,12 +554,63 @@ namespace Project2
                 PD[i/2, 0] = coordinates.X;
                 PD[i/2, 1] = coordinates.Y;
 
-                if (epipolar)
+                /*if (epipolar)
                 {
-                    /*
+                    *//*
                        0    1   2       00 01 02    
                                         10 11 12    
                                         20 21 22    
+
+                   *//*
+                    X[0] = PD[i / 2, 0];
+                    X[1] = PD[i / 2, 1];
+                    X[2] = 1;
+
+                    double[] Eq = new double[3];
+
+                    Eq[0] = ((F[0, 0] * X[0]) + (F[1, 0] * X[1]) + (F[2, 0] * X[2]));
+                    Eq[1] = ((F[0, 1] * X[0]) + (F[1, 1] * X[1]) + (F[2, 1] * X[2]));
+                    Eq[2] = ((F[0, 2] * X[0]) + (F[1, 2] * X[1]) + (F[2, 2] * X[2]));
+
+                    int x1 = 0;
+                    int x2 = 430;
+
+                    double y1, y2;
+
+                    y1 = (((-1) * Eq[2]) - (Eq[0] * x1)) / Eq[1];
+                    y2 = (((-1) * Eq[2]) - (Eq[0] * x2)) / Eq[1];
+
+
+                    Graphics lines = pictureBox1.CreateGraphics();
+                    lines.DrawLine(Pens.Yellow, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
+                }*/
+                i = i + 1;
+            }
+
+            if (epipolar)
+            {
+                MouseEventArgs me = (MouseEventArgs)e;
+                Point coordinates = me.Location;
+                Graphics dots = pictureBox2.CreateGraphics();
+                dots.FillRectangle(Brushes.LightGreen, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
+                dots.DrawRectangle(Pens.Red, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
+
+                if (epipolar == false)
+                    listBox1.Items.Add("       " + coordinates.ToString());
+
+                PD[i / 2, 0] = coordinates.X;
+                PD[i / 2, 1] = coordinates.Y;
+
+                
+                    /*
+                       0    1   2       00 01 02    
+                                        10 11 12    
+                                        20 21 22   
+                    
+
+                P[x,y]
+                    F[]
+
 
                    */
                     X[0] = PD[i / 2, 0];
@@ -534,7 +634,7 @@ namespace Project2
 
                     Graphics lines = pictureBox1.CreateGraphics();
                     lines.DrawLine(Pens.Yellow, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
-                }
+                
                 i = i + 1;
             }
         }
