@@ -18,3 +18,13 @@ F:\1 - MSC\8510\Assignment Projects\EpipolarLines\Project2\Project2\obj\Debug\Pr
 F:\1 - MSC\8510\Assignment Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.csproj.CoreCompileInputs.cache
 F:\1 - MSC\8510\Assignment Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.exe
 F:\1 - MSC\8510\Assignment Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.pdb
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\bin\Debug\Project2.exe.config
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\bin\Debug\Project2.exe
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\bin\Debug\Project2.pdb
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.csproj.AssemblyReference.cache
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.Form1.resources
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.Properties.Resources.resources
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.csproj.GenerateResource.cache
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.csproj.CoreCompileInputs.cache
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.exe
+C:\Users\Public\Projects\EpipolarLines\Project2\Project2\obj\Debug\Project2.pdb

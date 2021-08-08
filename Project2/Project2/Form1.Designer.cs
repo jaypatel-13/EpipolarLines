@@ -51,9 +51,10 @@ namespace Project2
             this.label1.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(485, 9);
+            this.label1.Location = new System.Drawing.Point(603, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(922, 38);
+            this.label1.Size = new System.Drawing.Size(760, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Visual Processing - Fundamental Matrix, Epipolar Line";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -62,9 +63,10 @@ namespace Project2
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(825, 559);
+            this.button1.Location = new System.Drawing.Point(858, 454);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 52);
+            this.button1.Size = new System.Drawing.Size(184, 42);
             this.button1.TabIndex = 1;
             this.button1.Text = "Fundamental Matrix";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,22 +75,23 @@ namespace Project2
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.Location = new System.Drawing.Point(247, 111);
+            this.pictureBox1.Location = new System.Drawing.Point(185, 90);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(522, 430);
+            this.pictureBox1.Size = new System.Drawing.Size(392, 349);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-           // this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox2.Location = new System.Drawing.Point(1145, 111);
+            this.pictureBox2.Location = new System.Drawing.Point(1337, 90);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(522, 430);
+            this.pictureBox2.Size = new System.Drawing.Size(392, 349);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -96,9 +99,10 @@ namespace Project2
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(247, 559);
+            this.button2.Location = new System.Drawing.Point(185, 454);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(522, 52);
+            this.button2.Size = new System.Drawing.Size(392, 42);
             this.button2.TabIndex = 4;
             this.button2.Text = "Add Image 1";
             this.button2.UseVisualStyleBackColor = true;
@@ -107,9 +111,10 @@ namespace Project2
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1145, 559);
+            this.button3.Location = new System.Drawing.Point(1337, 454);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(522, 52);
+            this.button3.Size = new System.Drawing.Size(392, 42);
             this.button3.TabIndex = 5;
             this.button3.Text = "Add Image 2 ";
             this.button3.UseVisualStyleBackColor = true;
@@ -119,18 +124,19 @@ namespace Project2
             // 
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(825, 175);
+            this.listBox1.Location = new System.Drawing.Point(858, 142);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 356);
+            this.listBox1.Size = new System.Drawing.Size(186, 290);
             this.listBox1.TabIndex = 6;
             // 
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.Location = new System.Drawing.Point(825, 111);
+            this.button4.Location = new System.Drawing.Point(858, 90);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(246, 48);
+            this.button4.Size = new System.Drawing.Size(184, 39);
             this.button4.TabIndex = 7;
             this.button4.Text = "Select Points";
             this.button4.UseVisualStyleBackColor = true;
@@ -139,10 +145,11 @@ namespace Project2
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(579, 644);
+            this.textBox1.Location = new System.Drawing.Point(673, 523);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(764, 167);
+            this.textBox1.Size = new System.Drawing.Size(574, 136);
             this.textBox1.TabIndex = 8;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -151,9 +158,10 @@ namespace Project2
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.BackColor = System.Drawing.Color.Red;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(825, 828);
+            this.button5.Location = new System.Drawing.Point(858, 673);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(246, 53);
+            this.button5.Size = new System.Drawing.Size(184, 43);
             this.button5.TabIndex = 9;
             this.button5.Text = "Epipolar Lines";
             this.button5.UseVisualStyleBackColor = false;
@@ -161,12 +169,12 @@ namespace Project2
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
@@ -177,6 +185,7 @@ namespace Project2
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Form1";

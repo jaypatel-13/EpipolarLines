@@ -401,7 +401,28 @@ namespace Project2
 
         }
 
-        
+        public static Bitmap MakeGrayscale(Bitmap original)
+        {
+            //make an empty bitmap the same size as orgininal
+            Bitmap newBitmap = new Bitmap(original.Width, original.Height);
+
+            for (int i = 0; i < original.Width; i++)
+            {
+                for (int j = 0; j < original.Height; j++)
+                {
+                    Color c = original.GetPixel(i, j);
+
+                    int r = c.R;
+                    int g = c.G;
+                    int b = c.B;
+                    int avg = (r + g + b) / 3;
+                    newBitmap.SetPixel(i, j, Color.FromArgb(avg, avg, avg));
+
+                }
+            }
+
+            return newBitmap;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -412,6 +433,12 @@ namespace Project2
             {
                 // display image in picture box  
                 pictureBox1.Image = new Bitmap(open.FileName);
+                
+                Bitmap bmMyImage = new Bitmap((Bitmap)pictureBox1.Image);
+                bmMyImage = MakeGrayscale(bmMyImage);
+
+                pictureBox1.Image = (Image)bmMyImage;
+        
                 defaultImage1 = pictureBox1.Image;
                 // image file path  
             }
@@ -426,6 +453,13 @@ namespace Project2
             {
                 // display image in picture box  
                 pictureBox2.Image = new Bitmap(open.FileName);
+
+                Bitmap bmMyImage = new Bitmap((Bitmap)pictureBox2.Image);
+                bmMyImage = MakeGrayscale(bmMyImage);
+
+                pictureBox2.Image = (Image)bmMyImage;
+
+
                 defaultImage2 = pictureBox2.Image;
                 // image file path  
             }
@@ -453,38 +487,8 @@ namespace Project2
                 dots.FillRectangle(Brushes.LightGreen, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
                 dots.DrawRectangle(Pens.Red, coordinates.X - 3, coordinates.Y - 3, 6.0f, 6.0f);
 
-                /*if (epipolar)
-                {
-                    *//*
-                        00 01 02    0
-                        10 11 12    1
-                        20 21 22    2
-
-                   *//*
-                    X[0] = P[i / 2, 0];
-                    X[1] = P[i / 2, 1];
-                    X[2] = 1;
-
-                    double[] Eq = new double[3];
-
-                    Eq[0] = ((F[0, 0] * X[0]) + (F[0, 1] * X[1]) + (F[0, 2] * X[2]));
-                    Eq[1] = ((F[1, 0] * X[0]) + (F[1, 1] * X[1]) + (F[1, 2] * X[2]));
-                    Eq[2] = ((F[2, 0] * X[0]) + (F[2, 1] * X[1]) + (F[2, 2] * X[2]));
-
-                    int x1 = 0;
-                    int x2 = 430;
-
-                    double y1, y2;
-
-                    y1 = (((-1) * Eq[2]) - (Eq[0] * x1)) / Eq[1];
-                    y2 = (((-1) * Eq[2]) - (Eq[0] * x2)) / Eq[1];
-
-
-                    Graphics lines = pictureBox2.CreateGraphics();
-                    lines.DrawLine(Pens.LightGreen, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
-                }*/
-
                 i = i+1;
+                
             }
 
             if (epipolar)
@@ -554,36 +558,6 @@ namespace Project2
                 PD[i/2, 0] = coordinates.X;
                 PD[i/2, 1] = coordinates.Y;
 
-                /*if (epipolar)
-                {
-                    *//*
-                       0    1   2       00 01 02    
-                                        10 11 12    
-                                        20 21 22    
-
-                   *//*
-                    X[0] = PD[i / 2, 0];
-                    X[1] = PD[i / 2, 1];
-                    X[2] = 1;
-
-                    double[] Eq = new double[3];
-
-                    Eq[0] = ((F[0, 0] * X[0]) + (F[1, 0] * X[1]) + (F[2, 0] * X[2]));
-                    Eq[1] = ((F[0, 1] * X[0]) + (F[1, 1] * X[1]) + (F[2, 1] * X[2]));
-                    Eq[2] = ((F[0, 2] * X[0]) + (F[1, 2] * X[1]) + (F[2, 2] * X[2]));
-
-                    int x1 = 0;
-                    int x2 = 430;
-
-                    double y1, y2;
-
-                    y1 = (((-1) * Eq[2]) - (Eq[0] * x1)) / Eq[1];
-                    y2 = (((-1) * Eq[2]) - (Eq[0] * x2)) / Eq[1];
-
-
-                    Graphics lines = pictureBox1.CreateGraphics();
-                    lines.DrawLine(Pens.Yellow, x1, Convert.ToInt32(y1), x2, Convert.ToInt32(y2));
-                }*/
                 i = i + 1;
             }
 
@@ -606,12 +580,6 @@ namespace Project2
                        0    1   2       00 01 02    
                                         10 11 12    
                                         20 21 22   
-                    
-
-                P[x,y]
-                    F[]
-
-
                    */
                     X[0] = PD[i / 2, 0];
                     X[1] = PD[i / 2, 1];
